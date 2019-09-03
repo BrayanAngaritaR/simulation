@@ -15,7 +15,9 @@ for( int i = 1; i <= 40; i++ ){
 }
 ```
 - - - - - - 
+Video interesante: [La sucesión de Fibonacci y la razón aúrea][2]
 
+[2]: https://www.youtube.com/watch?v=yDyMSliKsxI
 - - - - - -
 ### Contexto
 
