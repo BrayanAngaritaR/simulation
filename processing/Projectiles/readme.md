@@ -1,3 +1,13 @@
+### Disparo de proyectiles
+#### Este programa permite conocer estadísticas del lanzamiento de proyectiles cuando se lanza en diferentes ángulos, velocidades iniciales y alturas. También permite manipular los valores entre la altura de la plataforma y el cañón.
+
+#### Ello supone que que dentro del lanzamiento no hay resistencia al viento, la fuerza es aplicada al centro de masa, la aceleración se debe a la gravedad = -.1 y que no se pierde energía por el calor.
+
+
+- - - - - - 
+#### Código
+```
+
 //Tamaño de la fuente
 int tSize = 18;
 
@@ -430,3 +440,30 @@ class SpecialText {
     textFont (createFont("Palatino Linotype", tSize));
   }
 }
+
+```
+- - - - - - 
+Video interesante: [Explicación del lanzamiento de proyectiles][2]
+
+[2]: https://www.youtube.com/watch?v=1b_3rncl4fU
+- - - - - -
+### Contexto
+
+Lanzamiento de proyectiles (movimiento parabólico):
+
+Dividimos este tipo de movimientos en dos casos: lanzamiento horizontal y lanzamiento no horizontal. En esta lección empezamos estudiando el lanzamiento horizontal:
+
+El lanzamiento horizontal consiste en lanzar un objeto horizontalmente desde cierta altura con cierta velocidad inicial. Se puede dividir en dos movimientos: uno horizontal rectilíneo uniforme, con velocidad constante igual a la velocidad inicial de lanzamiento, y uno vertical de caída libre desde la altura del lanzamiento con velocidad inicial cero. Tratándose de una fusión entre movimiento rectilíneo uniforme y movimiento rectilíneo uniformemente acelerado, usamos pues las ecuaciones ya definidas para estos dos tipos de movimiento, tratando cada uno por separado.
+
+En el lanzamiento no horizontal, se lanza el proyectil con un ángulo de inclinación mayor que cero grados 0º y menor que noventa grados 90º por encima de la horizontal. El cuerpo describe entonces un movimiento parabólico en cuya primera mitad asciende y en la otra mitad desciende. Al igual que en el caso anterior, dividimos el movimiento en uno horizontal rectilíneo uniforme, con velocidad constante igual a la componente X de la velocidad inicial, y uno vertical de caída libre con velocidad inicial igual a la componente Y de la velocidad inicial de lanzamiento y altura inicial igual a la altura desde la que se hizo el lanzamiento. El movimiento vertical se divide a su vez en un ascenso y un descenso (caída), como en las dos últimas lecciones de la unidad anterior. Igualmente aquí, como se trata de una fusión entre movimiento rectilíneo uniforme y movimiento rectilíneo uniformemente acelerado, usamos las ecuaciones ya definidas para estos dos tipos de movimiento, tratando cada uno por separado.
+
+Terminamos la lección introduciendo la ecuación de la trayectoria para el movimiento parabólico, que relaciona los dos movimientos, el horizontal rectilíneo uniforme y el vertical de caída libre, y en la que no interviene el tiempo.
+
+Fuente: [TareasPlus][1]
+
+[1]: https://www.tareasplus.com/Cinematica/Lanzamiento-de-proyectiles-movimiento-parabolico/Cristian-Giraldo370
+
+- - - - - -
+
+Fecha de creación: 04/09/2019
+Creado por: Brayan Angarita
