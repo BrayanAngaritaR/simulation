@@ -1,34 +1,39 @@
+ /*
+Este código obtiene las noticias de El Tiempo de Medellín a través de RSS
+Fecha: 23/09/2019
+Realizado por: Brayan Angarita Rivera
+ */
+
 PImage webImg;
 
-// Load RSS feed   
-String url = "https://www.eltiempo.com/rss/colombia_medellin.xml";   
-// XMLElement rss = new XMLElement(this, url);   
-XML rss = loadXML(url);  
-XML imagen = loadXML(url);
+String url;   
+XML imagen;
+XML rss;  
+XML[] titleXMLElements;
+XML imgencita;
+int k ;
 
-// Get title of each element   
-// XMLElement[] titleXMLElements = rss.getChildren("channel/item/title"); 
-XML[] titleXMLElements = rss.getChildren("channel/item/title"); 
-XML imgencita = rss.getChild("channel/item/enclosure");
-//String ruta = str(imgencita);
-//String root = split(imgencita,'=');
-println(imgencita.getString("url")); 
-
-//XML[] titleXMLImg = rss.getChildren("channel/item/enclosure:url"); 
-for (int i = 0; i < titleXMLElements.length; i++) {   
-    String title = titleXMLElements[i].getContent();   
-    println(i + ": " + title);
-}  
-println("---");
+void setup(){
+url = "https://www.eltiempo.com/rss/colombia_medellin.xml";   
+imagen = loadXML(url);
+rss = loadXML(url);  
+titleXMLElements = rss.getChildren("channel/item/title"); 
+imgencita = rss.getChild("channel/item/enclosure");
+println(imgencita.getString("url"));
 webImg = loadImage(imgencita.getString("url"));
+
+//size(800,400);
+
+}
+
+void draw(){
 image(webImg, 0, 0);
 
+k=0;
+for (int i = 0; i < titleXMLElements.length; i++) { 
+    String title = titleXMLElements[i].getContent();
+    fill(85,107,47);
+    text(i + ": " + title,10,k+=15);
+}  
 
-//for (int i = 0; i < titleXMLImg.length; i++) {   
-//    String title2 = titleXMLImg[i].getContent();   
-//    println(i + ": " + title2);  
-//    //String enclosure  = titleXMLElements[i].getContent(); 
-//    //webImg = loadImage(enclosure, "png");
-//    //background(0);
-//   //image(webImg, 0, 0);
-//}  
+}

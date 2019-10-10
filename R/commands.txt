@@ -1,0 +1,3 @@
+library(curl)
+tmp <- tempfile()
+curl_download("https://api.hitbtc.com/api/2/public/candles/ETHBTC?period=M15", tmp)
