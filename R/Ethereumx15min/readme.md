@@ -1,5 +1,5 @@
-##Graficar velas en RStudio
-###Brayan Angarita
+## Graficar velas en RStudio
+### Brayan Angarita
 
 Este programa realiza las siguientes funciones:
 
@@ -30,22 +30,22 @@ get_max <- as.numeric(out_df$max)
 get_volume <- as.numeric(out_df$volume)
 ```
 
-##Obtener toda la información
+## Obtener toda la información
 
 ```
 get_info = data.frame(get_min,get_max,get_volume,volumeQuote,close,open,tiempo)
 
 ```
-##Exportar datos a aun csv
+## Exportar datos a aun csv
 ```
 write.table(get_info, file = "Ethereum.csv", sep = ",", row.names = F, col.names = F,quote=F)
 ```
-##Comenzar con la graficación
+## Comenzar con la graficación
 ```
 par(mfcol = c(3,2))
 ```
 
-##Llevar Datos a  SQLite
+## Llevar Datos a  SQLite
 ```
 con <- dbConnect(RSQLite::SQLite(), ":memory:")
 con
@@ -53,7 +53,7 @@ dbWriteTable(con, "db_table_Ethereum", get_info)
 dbListTables(con)
 dbReadTable(con, "db_table_Ethereum")
 ```
-##Graficar todos los elementos
+## Graficar todos los elementos
 ```
 plot (open,pch=16,col=1,xlab ="tiempo(minutos)")
 par(mfrow=c(2,2))
