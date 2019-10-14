@@ -1,3 +1,14 @@
+##Graficar velas en RStudio
+###Brayan Angarita
+
+Este programa realiza las siguientes funciones:
+
+* Obtiene velas de ETH para 15 minutos, vía CURL; realiza la petición de la API de HitBTC, para los datos correspondientes a la moneda Ethereum.
+
+* Una vez descargados dichos datos, lo exporta a un archivo CSV. Elimina los caracteres especiales y encabezados no necesarios en el archivo.
+
+* Luego los inserta en la base de datos mediante SQLite, en una tabla con el nombre de db_table_Ethereum.
+
 ```
 install.packages("httr")
 install.packages("Rtools")
